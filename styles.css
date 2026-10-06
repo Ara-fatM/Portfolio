@@ -37,6 +37,9 @@ a {
     padding: 20px;
     text-decoration: none;
 }
+a:hover{
+    color: #95AD8C;
+}
 
 main {
     height: 100%;

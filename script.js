@@ -68,6 +68,7 @@ function checkWinner() {
                 xWins = xWins + 1;
                 winAlert.textContent = 'X wins!'
                 xScoreText.textContent = xWins;
+                alert("You win!!")
             }else{
               oWins = oWins + 1;
                winAlert.textContent = 'O wins!'

@@ -1,6 +1,12 @@
 console.log('Hello World')
 const resetButton = document.querySelector("#restart")
+const xScoreText = document.querySelector("#x-score")
+const oScoreText = document.querySelector("#o-score")
+const drawScoreText = document.querySelector("#draw-score")
 let counter = 0;
+let xWins = 0;
+let oWins = 0;
+let draws = 0;
 
 function count() {
     counter = counter + 1;
@@ -58,11 +64,24 @@ function checkWinner() {
         third = squares[line[2]].textContent;
         if (first !== '' && first === second && first === third) {
             winAlert.textContent = first + 'Wins!'
+            if (first == 'X') {
+                xWins = xWins + 1;
+                winAlert.textContent = 'X wins!'
+                xScoreText.textContent = xWins;
+            }else{
+              oWins = oWins + 1;
+               winAlert.textContent = 'O wins!'
+               oScoreText.textContent = oWins;
+            }
             return;
         }
     }
+    //draw statement
     if (moves == 9) {
-        winAlert.textContent = 'draw';
+        winAlert.textContent = 'Draw';
+        draws = draws + 1;
+        winAlert.textContent = 'Draw!'
+        oScoreText.textContent = draws;
     }
 }
 

@@ -1,9 +1,100 @@
 body{
     color: red;
-    background-color: black;
+    background-color: #141414;
+    margin:0;
+    font-family: Arial,sans-serif;
 }
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: black;
+
+}
+.nav-btn{
+padding:20px;
+padding-top: 10px;
+padding-bottom: 10px;
+border: 2px solid white;
+border-radius: 20px;
+background-color: transparent;
+color: white;
+transition: background-color 0.4s ease-in-out 0.1s;
+opacity: 0.6;
+cursor: pointer;
+}
+.nav-btn:hover{
+    opacity: 1;
+}
+.movie-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 24px;
+    padding: 32px;
+}
+.poster{
+    aspect-ratio: 2/3;
+    background-color: teal;
+    border-radius: 8px;
+}
+.card{
+    background-color: #1F1F1F;
+    border-radius: 12px;
+    padding: 12px;
+    /*transition: all 0.3 ease-out;*/
+    h3{
+        font-size: 18px;
+    }
+}
+.card:hover{
+    transform: scale(1.1);
+}
+.rating{
+    display: inline-block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.high{
+    background-color: green;
+}
+.low{
+    background-color: brown;
+}
+#featured{
+    margin: 32px;
+    padding: 48px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-radius: 12px;
+    background-color: blue;
+}
+#featured h2{
+    font-size: 40px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.loader{
+    width: 50px;
+    height: 50px;
+    border: 6px solid #333;
+    border-top-color: teal;
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 2s linear infinite;
+}
+
+
 @keyframes slideIn {
-    from {
+    from { 
         opacity: 0;
     }
 
@@ -13,5 +104,5 @@ body{
 }
 
 #movie-arafat {
-    animation: slideIn 2s ease-in infinite;
+    animation: slideIn 1s ease-in infinite;
 }
